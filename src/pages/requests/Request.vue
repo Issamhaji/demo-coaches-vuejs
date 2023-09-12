@@ -49,13 +49,13 @@ export default {
   },
   methods: {
     async loadRequests(){
-      this.idLoading = true;
+      this.isLoading = true;
       try {
         this.$store.dispatch('requests/fetchRequest');
-      }catch (error){
+      }catch(error){
         this.error = error.message || 'Something failed!';
       }
-      this.error = false;
+      this.isLoading = false;
     },
     handleError() {
       this.error = null;

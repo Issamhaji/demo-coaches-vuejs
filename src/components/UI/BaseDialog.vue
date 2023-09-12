@@ -98,17 +98,12 @@ menu {
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  dialog {
-    left: calc(50% - 20rem);
-    width: 40rem;
-  }
-}
 .dialog-enter-from,
 .dialog-leave-to {
   opacity: 0;
   transform: scale(0.8);
 }
+
 .dialog-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -116,9 +111,17 @@ menu {
 .dialog-leave-active {
   transition: all 0.3s ease-in;
 }
+
 .dialog-enter-to,
 .dialog-leave-from {
   opacity: 1;
   transform: scale(1);
+}
+
+@media (min-width: 768px) {
+  dialog {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
 }
 </style>

@@ -34,12 +34,14 @@ export default {
         },
         async fetchRequest(context){
             const coachId = context.rootGetters.userId;
+            const token = context.rootGetters.token;
             const response = await fetch(
-                `https://vue-http-coach-demo-7e413-default-rtdb.firebaseio.com/request/${coachId}.json`
+                `https://vue-http-coach-demo-7e413-default-rtdb.firebaseio.com/request/${coachId}.json?auth=`+token
             );
             const responseData = await response.json();
-            if(!response.ok){
+            if (!response.ok) {
                 const error = new Error(responseData.message || 'Failed to fetch requests.');
+                console.log(error);
                 throw error;
             }
             const requests = [];
@@ -53,8 +55,6 @@ export default {
                 requests.push(request);
             }
             context.commit('setRequests', requests);
-
-
         }
 
     },
