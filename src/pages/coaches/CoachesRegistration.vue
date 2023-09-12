@@ -1,6 +1,8 @@
 <template>
-  <h2>registe</h2>
-  <coach-form @save-data="saveData"></coach-form>
+  <div>
+    <h2>registe</h2>
+    <coach-form @save-data="saveData"></coach-form>
+  </div>
 
 </template>
 
